@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mysql
+  labels:
+    app: mysql-pod
+spec:
+  containers:
+    - name: mysql-container
+      image: mysql:8
+      ports:
+        - containerPort: 3306
+      env:
+        - name: "MYSQL_ROOT_PASSWORD"
+          value: "root"
+        - name: "MYSQL_DATABASE"
+          value: bd_try
+        - name: "MYSQL_PASSWORD"
+          value: "root"
